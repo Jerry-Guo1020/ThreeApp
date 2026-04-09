@@ -13,9 +13,8 @@
 import { ref } from 'vue';
 
 const iconStyle = {
-  fontSize: '56rpx',
-  lineHeight: '56rpx',
-  
+  fontSize: '48rpx',
+  lineHeight: '48rpx',
 };
 
 const navList = ref([
@@ -37,12 +36,7 @@ const navList = ref([
     bgColor: '#fef4e8',
     linkUrl: '/pages/Specialty/Specialty'
   },
-  {
-    name: '设计定制',
-    icon: '🎨',
-    bgColor: '#f4e8fd',
-    linkUrl: ''
-  }
+  
 ]);
 
 const handleClick = (item) => {
@@ -57,28 +51,27 @@ const handleClick = (item) => {
 <style scoped>
 .nav-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
-
-  gap: 24rpx;
+  gap: 14rpx;
   padding: 20rpx 30rpx 40rpx;
 }
 
 .nav-item {
-  width: 23%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .nav-icon-box {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 28rpx;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 24rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16rpx;
+  margin-bottom: 12rpx;
   transition: transform 0.2s;
 }
 
@@ -87,8 +80,11 @@ const handleClick = (item) => {
 }
 
 .nav-icon {
-  width: 56rpx;
-  height: 56rpx;
+  font-size: 48rpx;
+  line-height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-text {
@@ -97,5 +93,6 @@ const handleClick = (item) => {
   font-weight: 600;
   text-align: center;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 </style>
