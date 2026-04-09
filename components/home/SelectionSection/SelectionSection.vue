@@ -58,35 +58,41 @@ const caseList = ref([
 
 <style scoped>
 .selection-section {
-  padding: 0 30rpx 40rpx;
+  padding: 0 40rpx 60rpx;
 }
 
 .section-header {
   display: flex;
   align-items: center;
-  margin-bottom: 30rpx;
-  padding-top: 20rpx;
+  justify-content: center;
+  margin-bottom: 50rpx;
+  padding-top: 40rpx;
+  position: relative;
 }
 
 .section-title {
-  font-size: 48rpx;
-  font-weight: 800;
+  font-size: 64rpx;
+  font-weight: 900;
   color: #002046;
+  letter-spacing: 8px;
+  padding: 0 32rpx;
 }
 
 .section-line {
   flex: 1;
-  height: 2rpx;
-  background-color: #e1e3e4;
-  margin: 0 24rpx;
+  height: 3rpx;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  margin: 0 20rpx;
+  max-width: 200rpx;
 }
 
 .section-subtitle {
-  font-size: 22rpx;
-  color: #775a0a;
+  font-size: 28rpx;
+  color: #d4af37;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 6px;
   text-transform: uppercase;
+  padding-left: 20rpx;
 }
 
 .case-list {
@@ -97,19 +103,21 @@ const caseList = ref([
 
 .case-card {
   background-color: #ffffff;
-  border-radius: 32rpx;
+  border-radius: 40rpx;
   overflow: hidden;
-  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8rpx 32rpx rgba(0, 32, 70, 0.12);
+  transition: all 0.3s ease;
 }
 
 .case-card-large {
   width: 100%;
+  margin-bottom: 12rpx;
 }
 
 .case-image-wrapper {
   position: relative;
   width: 100%;
-  height: 400rpx;
+  height: 520rpx;
   overflow: hidden;
 }
 
@@ -120,59 +128,63 @@ const caseList = ref([
 
 .case-tag {
   position: absolute;
-  top: 24rpx;
-  left: 24rpx;
-  background-color: #002046;
-  padding: 8rpx 24rpx;
-  border-radius: 20rpx;
+  top: 32rpx;
+  left: 32rpx;
+  background: linear-gradient(135deg, #002046, #003366);
+  padding: 12rpx 32rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 32, 70, 0.3);
 }
 
 .case-tag-text {
-  font-size: 20rpx;
+  font-size: 22rpx;
   color: #ffffff;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .case-content {
-  padding: 32rpx;
+  padding: 40rpx;
 }
 
 .case-title {
   display: block;
-  font-size: 34rpx;
-  font-weight: 700;
+  font-size: 40rpx;
+  font-weight: 800;
   color: #002046;
-  margin-bottom: 16rpx;
-  line-height: 1.3;
+  margin-bottom: 20rpx;
+  line-height: 1.4;
+  letter-spacing: 1px;
 }
 
 .case-desc {
   display: block;
-  font-size: 26rpx;
-  color: #666666;
-  line-height: 1.6;
-  margin-bottom: 28rpx;
+  font-size: 28rpx;
+  color: #555555;
+  line-height: 1.7;
+  margin-bottom: 32rpx;
 }
 
 .case-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 24rpx;
-  border-top: 1rpx solid #e1e3e4;
+  padding-top: 32rpx;
+  border-top: 2rpx solid #e8e8e8;
 }
 
 .case-award {
-  background-color: #e8c26b;
-  padding: 8rpx 20rpx;
-  border-radius: 12rpx;
+  background: linear-gradient(135deg, #d4af37, #b8941f);
+  padding: 12rpx 28rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(212, 175, 55, 0.3);
 }
 
 .case-award-text {
-  font-size: 20rpx;
+  font-size: 22rpx;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .case-more {
@@ -181,14 +193,20 @@ const caseList = ref([
 }
 
 .case-more-text {
-  font-size: 26rpx;
+  font-size: 28rpx;
   color: #002046;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .case-more-icon {
-  font-size: 32rpx;
+  font-size: 40rpx;
   color: #002046;
-  margin-left: 8rpx;
+  margin-left: 12rpx;
+  transition: transform 0.3s ease;
+}
+
+.case-card:active .case-more-icon {
+  transform: translateX(8rpx);
 }
 </style>
