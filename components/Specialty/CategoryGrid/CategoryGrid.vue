@@ -29,13 +29,11 @@ defineProps({
     type: Array,
     default: () => [
       { id: 'all', name: '全部精选', icon: '⭐' },
-      { id: 'wine', name: '法国名庄', icon: '🍷' },
-      { id: 'whisky', name: '威士忌', icon: '🥃' },
-      { id: 'baijiu', name: '中式白酒', icon: '🍶' },
-      { id: 'beer', name: '精酿啤酒', icon: '🍺' },
-      { id: 'seafood', name: '海鲜干货', icon: '🦐' },
-      { id: 'fruit', name: '岭南鲜果', icon: '🍊' },
-      { id: 'snack', name: '特色小吃', icon: '🥮' }
+      { id: 'qingyuan', name: '清远特产', icon: '🐔' },
+      { id: 'meat', name: '禽肉蛋品', icon: '🦆' },
+      { id: 'vegetable', name: '山珍蔬食', icon: '🎋' },
+      { id: 'fruit', name: '岭南鲜果', icon: '🍒' },
+      { id: 'tea', name: '茶叶冲饮', icon: '🍵' }
     ]
   }
 });

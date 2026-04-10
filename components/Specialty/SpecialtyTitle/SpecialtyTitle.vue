@@ -3,8 +3,8 @@
     <view class="title-content" :style="{ paddingTop: safeAreaTop + 'px' }">
       <view class="title-header">
         <view class="title-badge">
-          <text class="badge-icon">🍷</text>
-          <text class="badge-text">全球甄选</text>
+          <text class="badge-icon">🎁</text>
+          <text class="badge-text">广东地道风味</text>
         </view>
       </view>
       <text class="title-main">{{ title }}</text>
@@ -21,15 +21,15 @@ import { ref, computed, onMounted } from 'vue';
 defineProps({
   title: {
     type: String,
-    default: '酒水特产'
+    default: '广东特产'
   },
   subtitle: {
     type: String,
-    default: 'FINE WINE & SPECIALTY'
+    default: 'GUANGDONG SPECIALTY'
   },
   description: {
     type: String,
-    default: '甄选全球优质产区 · 冷链直达保鲜'
+    default: '清远地道风味 · 新鲜直达'
   }
 });
 
