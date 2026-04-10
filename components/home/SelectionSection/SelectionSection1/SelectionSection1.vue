@@ -1,9 +1,10 @@
 <template>
   <view class="selection-section">
     <view class="section-header">
-      <text class="section-title">鉴赏</text>
-      <view class="section-line"></view>
-      <text class="section-subtitle">SELECTIONS</text>
+      <view class="title-wrapper">
+        <text class="section-title">冷库工程</text>
+        <text class="section-subtitle">COLD STORAGE ENGINEERING</text>
+      </view>
     </view>
 
     <view class="case-list">
@@ -70,29 +71,43 @@ const caseList = ref([
   position: relative;
 }
 
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0 40rpx;
+}
+
 .section-title {
   font-size: 64rpx;
   font-weight: 900;
   color: #002046;
-  letter-spacing: 8px;
-  padding: 0 32rpx;
+  letter-spacing: 12px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 16rpx;
 }
 
-.section-line {
-  flex: 1;
-  height: 3rpx;
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120rpx;
+  height: 6rpx;
   background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  margin: 0 20rpx;
-  max-width: 200rpx;
+  border-radius: 3rpx;
 }
 
 .section-subtitle {
-  font-size: 28rpx;
-  color: #d4af37;
-  font-weight: 700;
-  letter-spacing: 6px;
+  font-size: 24rpx;
+  color: #999999;
+  font-weight: 500;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  padding-left: 20rpx;
+  margin-top: 8rpx;
 }
 
 .case-list {

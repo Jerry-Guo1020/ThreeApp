@@ -31,13 +31,19 @@
 			}
 		},
 		{
-			"path": "components/home/header-view/header-view",
+			"path": "components/home/HomeHeader/HomeHeader",
 			"style": {
 				"navigationBarTitleText": ""
 			}
 		},
 		{
-			"path": "components/home/HomeHeader/HomeHeader",
+			"path": "components/home/SelectionSection/SelectionSection2/SelectionSection2",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "components/home/SelectionSection/SelectionSection3/SelectionSection3",
 			"style": {
 				"navigationBarTitleText": ""
 			}
