@@ -67,10 +67,7 @@ const containerStyle = computed(() => ({
 <style lang="scss" scoped>
 .cold-title-section {
   width: 100%;
-  padding-left: 40rpx;
-  padding-right: 40rpx;
-  padding-top: var(--safe-area-top);
-  padding-bottom: 40rpx;
+  padding: 40rpx 40rpx 40rpx;
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(230, 240, 250, 0.8) 0%, rgba(248, 249, 250, 1) 100%);
 }

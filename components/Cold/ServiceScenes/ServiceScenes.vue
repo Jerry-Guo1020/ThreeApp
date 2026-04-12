@@ -84,7 +84,8 @@ const handleSceneTap = (scene) => {
 <style lang="scss" scoped>
 .service-scenes {
   width: 100%;
-  padding: 40rpx;
+  padding: 0 30rpx 60rpx;
+  box-sizing: border-box;
   background: #ffffff;
 }
 
@@ -114,10 +115,15 @@ const handleSceneTap = (scene) => {
 .scenes-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24rpx;
+  gap: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .scene-card {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
   background: #ffffff;
   border-radius: 24rpx;
   overflow: hidden;
@@ -143,34 +149,8 @@ const handleSceneTap = (scene) => {
   display: block;
 }
 
-.scene-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0, 82, 147, 0.4) 100%);
-}
-
-.scene-index {
-  position: absolute;
-  top: 16rpx;
-  left: 16rpx;
-  width: 56rpx;
-  height: 56rpx;
-  background: linear-gradient(135deg, #005293, #0078cc);
-  border-radius: 16rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28rpx;
-  font-weight: 700;
-  color: #ffffff;
-  box-shadow: 0 4rpx 12rpx rgba(0, 82, 147, 0.3);
-}
-
 .scene-info {
-  padding: 24rpx;
+  padding: 20rpx;
 }
 
 .scene-name {
@@ -203,5 +183,31 @@ const handleSceneTap = (scene) => {
   color: #0078cc;
   border-radius: 8rpx;
   font-weight: 500;
+}
+
+.scene-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 82, 147, 0.4) 100%);
+}
+
+.scene-index {
+  position: absolute;
+  top: 16rpx;
+  left: 16rpx;
+  width: 56rpx;
+  height: 56rpx;
+  background: linear-gradient(135deg, #005293, #0078cc);
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 4rpx 12rpx rgba(0, 82, 147, 0.3);
 }
 </style>

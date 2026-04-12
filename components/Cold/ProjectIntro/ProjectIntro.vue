@@ -60,13 +60,16 @@ const containerStyle = computed(() => ({
 <style lang="scss" scoped>
 .project-intro {
   width: 100%;
-  padding: 40rpx;
+  padding: 0 30rpx 60rpx;
+  box-sizing: border-box;
   background: linear-gradient(135deg, rgba(230, 240, 250, 0.5), rgba(255, 255, 255, 0.8));
 }
 
 .intro-card {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
   background: #ffffff;
   border-radius: 32rpx;
   overflow: hidden;

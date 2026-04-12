@@ -50,11 +50,9 @@ const selectCategory = (index, item) => {
 
 <style lang="scss" scoped>
 .category-grid {
-  width: 100%;
+  width: 90%;
   padding: 20rpx 40rpx;
-  background: #ffffff;
   border-radius: 0 0 32rpx 32rpx;
-  box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.04);
 }
 
 .category-scroll {
@@ -105,7 +103,6 @@ const selectCategory = (index, item) => {
 .category-icon-wrapper {
   width: 88rpx;
   height: 88rpx;
-  background: linear-gradient(135deg, #f5f7fa, #e8ecf1);
   border-radius: 24rpx;
   display: flex;
   align-items: center;

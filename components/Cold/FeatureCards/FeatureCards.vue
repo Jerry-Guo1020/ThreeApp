@@ -77,7 +77,8 @@ const containerStyle = computed(() => ({
 <style lang="scss" scoped>
 .feature-cards {
   width: 100%;
-  padding: 40rpx;
+  padding: 0 30rpx 60rpx;
+  box-sizing: border-box;
   background: #ffffff;
 }
 
@@ -107,13 +108,16 @@ const containerStyle = computed(() => ({
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24rpx;
+  gap: 20rpx;
+  box-sizing: border-box;
 }
 
 .feature-card {
+  min-width: 0;
+  box-sizing: border-box;
   background: linear-gradient(135deg, rgba(230, 240, 250, 0.6), rgba(255, 255, 255, 0.9));
   border-radius: 24rpx;
-  padding: 32rpx 24rpx;
+  padding: 28rpx 20rpx;
   display: flex;
   flex-direction: column;
   align-items: center;

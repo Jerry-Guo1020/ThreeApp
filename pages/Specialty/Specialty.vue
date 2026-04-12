@@ -142,7 +142,7 @@ const handleProductTap = (item) => {
 <style lang="scss" scoped>
 .specialty-page {
   min-height: 100vh;
-  background: #f8f9fa;
+  background: linear-gradient(180deg, #e8f0ff 0%, #f5f7fa 40%, #ffffff 100%);
   padding-bottom: 40rpx;
 }
 

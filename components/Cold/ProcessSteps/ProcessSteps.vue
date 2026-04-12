@@ -83,7 +83,8 @@ const containerStyle = computed(() => ({
 <style lang="scss" scoped>
 .process-steps {
   width: 100%;
-  padding: 40rpx;
+  padding: 0 30rpx 60rpx;
+  box-sizing: border-box;
   background: linear-gradient(180deg, rgba(230, 240, 250, 0.5), rgba(255, 255, 255, 0.8));
 }
 
@@ -113,12 +114,16 @@ const containerStyle = computed(() => ({
 .steps-timeline {
   position: relative;
   padding: 20rpx 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .step-item {
   display: flex;
   position: relative;
   padding-bottom: 40rpx;
+  width: 100%;
+  box-sizing: border-box;
 
   &.last-step {
     padding-bottom: 0;
@@ -126,32 +131,17 @@ const containerStyle = computed(() => ({
 }
 
 .step-marker {
-  position: relative;
-  width: 80rpx;
-  height: 80rpx;
-  background: linear-gradient(135deg, #005293, #0078cc);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4rpx 16rpx rgba(0, 82, 147, 0.3);
-  border: 4rpx solid #ffffff;
-  z-index: 1;
-}
-
-.step-number {
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #ffffff;
 }
 
 .step-content {
   flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
   margin-left: 24rpx;
   background: #ffffff;
   border-radius: 20rpx;
-  padding: 24rpx 28rpx;
+  padding: 24rpx 20rpx;
   box-shadow: 0 4rpx 16rpx rgba(0, 82, 147, 0.08);
   border: 1rpx solid rgba(0, 82, 147, 0.06);
 }

@@ -68,7 +68,6 @@ const containerStyle = computed(() => ({
   padding-top: var(--safe-area-top);
   padding-bottom: 40rpx;
   box-sizing: border-box;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(248,249,250,1) 100%);
 }
 
 .title-content {
@@ -84,7 +83,6 @@ const containerStyle = computed(() => ({
   display: inline-flex;
   align-items: center;
   padding: 10rpx 24rpx;
-  background: linear-gradient(135deg, rgba(0,32,70,0.08), rgba(0,32,70,0.04));
   border-radius: 20rpx;
   border: 1rpx solid rgba(0,32,70,0.1);
 }
@@ -123,7 +121,6 @@ const containerStyle = computed(() => ({
 .title-divider {
   width: 100%;
   height: 2rpx;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
   margin-bottom: 32rpx;
   max-width: 300rpx;
 }
