@@ -13,7 +13,7 @@
 			}
 		},
 		{
-			"path": "pages/cold/cold",
+			"path": "pages/cold/Cold",
 			"style": {
 				"navigationStyle": "custom"
 			}
