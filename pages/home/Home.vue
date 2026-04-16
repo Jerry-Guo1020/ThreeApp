@@ -32,7 +32,7 @@ import SelectionSection3 from '@/components/home/SelectionSection/SelectionSecti
 <style scoped>
 .home-container {
   min-height: 100vh;
-  background: linear-gradient(180deg, #e8f0ff 0%, #f5f7fa 40%, #ffffff 100%);
+  background: linear-gradient(180deg, #FDF6F0 0%, #FFF8F3 40%, #FFFFFF 100%);
   width: 100%;
 }
 </style>
