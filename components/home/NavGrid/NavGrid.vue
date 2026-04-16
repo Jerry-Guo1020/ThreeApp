@@ -2,7 +2,7 @@
   <view class="nav-grid">
     <view class="nav-item" v-for="(item, index) in navList" :key="index" @click="handleClick(item)">
       <view class="nav-icon-box" :style="'background-color: ' + item.bgColor">
-        <text class="nav-icon" :style="iconStyle">{{ item.icon }}</text>
+        <image class="nav-icon" :style="iconStyle" :src="item.iconUrl"></image>
       </view>
       <text class="nav-text">{{ item.name }}</text>
     </view>
@@ -13,26 +13,26 @@
 import { ref } from 'vue';
 
 const iconStyle = {
-  fontSize: '48rpx',
-  lineHeight: '48rpx',
+  width: '56rpx',
+  height: '56rpx',
 };
 
 const navList = ref([
   {
     name: '冷库工程',
-    icon: '❄️',
-    bgColor: '#e8f4fd',
+    iconUrl: '/static/home/NavGrid/冷库.png',
+    bgColor: '#ffffff',
     linkUrl: '/pages/cold/cold'
   },
   {
     name: '酒水精选',
-    icon: '🍷',
+    iconUrl: '/static/home/NavGrid/酒水.png',
     bgColor: '#fdedec',
     linkUrl: '/pages/wine/wine'
   },
   {
     name: '岭南特产',
-    icon: '🍊',
+    iconUrl: '/static/home/NavGrid/特产.png',
     bgColor: '#fef4e8',
     linkUrl: '/pages/Specialty/Specialty'
   },
@@ -80,11 +80,10 @@ const handleClick = (item) => {
 }
 
 .nav-icon {
-  font-size: 48rpx;
-  line-height: 48rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 56rpx;
+  height: 56rpx;
+  display: block;
+  object-fit: contain;
 }
 
 .nav-text {
