@@ -1,9 +1,9 @@
 <template>
   <view class="me-header" :style="{ paddingTop: safeAreaTop + 'px' }">
     <view class="header-content">
-      <text class="header-title">我的</text>
+      <text class="header-title">个人中心</text>
       <view class="header-icons">
-        <text class="header-icon" @click="handleMenu">⋮</text>
+        <text class="header-icon" @click="handleSettings">⚙️</text>
       </view>
     </view>
   </view>
@@ -19,12 +19,9 @@ onMounted(() => {
   safeAreaTop.value = systemInfo.statusBarHeight || 20;
 });
 
-const handleMenu = () => {
-  uni.showActionSheet({
-    itemList: ['设置', '帮助与反馈', '关于我们'],
-    success: (res) => {
-      console.log('选中了第' + res.tapIndex + '个选项');
-    }
+const handleSettings = () => {
+  uni.navigateTo({
+    url: '/pages/settings/settings'
   });
 };
 </script>
@@ -32,8 +29,8 @@ const handleMenu = () => {
 <style scoped>
 .me-header {
   width: 100%;
-  background: linear-gradient(180deg, #FDF6F0 0%, #FFF8F3 100%);
-  padding-bottom: 20rpx;
+  background: linear-gradient(180deg, #E0F2FE 0%, #F0F9FF 100%);
+  padding-bottom: 16rpx;
   box-sizing: border-box;
 }
 
@@ -45,10 +42,10 @@ const handleMenu = () => {
 }
 
 .header-title {
-  font-size: 40rpx;
-  font-weight: 700;
-  color: #8B7355;
-  letter-spacing: 2px;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #1E3A5F;
+  letter-spacing: 1px;
 }
 
 .header-icons {
@@ -57,8 +54,7 @@ const handleMenu = () => {
 }
 
 .header-icon {
-  font-size: 40rpx;
-  color: #8B7355;
+  font-size: 36rpx;
   padding: 10rpx;
 }
 </style>

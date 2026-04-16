@@ -17,25 +17,25 @@ import { ref } from 'vue';
 
 const banners = ref([
   {
-    title: '健康礼包',
-    description: '为您和家人的健康护航',
-    emoji: '🌿',
-    bgColor: 'linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%)',
-    url: '/pages/promotion/health'
+    title: '冷库工程',
+    description: '专业冷链解决方案',
+    emoji: '❄️',
+    bgColor: 'linear-gradient(135deg, #E0F2FE 0%, #B8D4E8 100%)',
+    url: '/pages/cold/Cold'
   },
   {
-    title: '感恩节活动',
-    description: '暖心好礼感恩回馈',
-    emoji: '🦃',
-    bgColor: 'linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%)',
-    url: '/pages/promotion/thanksgiving'
+    title: '高端酒水',
+    description: '全球产区直供',
+    emoji: '🍷',
+    bgColor: 'linear-gradient(135deg, #FCE4EC 0%, #E8C0D0 100%)',
+    url: '/pages/wine/Wine'
   },
   {
-    title: '社群福利中心',
-    description: '专属妈妈社群特权',
-    emoji: '🌸',
-    bgColor: 'linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 100%)',
-    url: '/pages/promotion/community'
+    title: '岭南特产',
+    description: '地道地方风味',
+    emoji: '🎁',
+    bgColor: 'linear-gradient(135deg, #E8F5E9 0%, #B8D4C0 100%)',
+    url: '/pages/Specialty/Specialty'
   }
 ]);
 
@@ -49,36 +49,26 @@ const handleBannerClick = (item) => {
 <style scoped>
 .promotion-banners {
   display: flex;
-  gap: 20rpx;
-  padding: 0 30rpx 24rpx;
+  gap: 16rpx;
+  padding: 0 30rpx 20rpx;
 }
 
 .banner-item {
   flex: 1;
-  border-radius: 20rpx;
+  border-radius: 16rpx;
   overflow: hidden;
 }
 
 .banner-content {
-  height: 180rpx;
-  border-radius: 20rpx;
+  height: 160rpx;
+  border-radius: 16rpx;
   padding: 20rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-}
-
-.banner-content::before {
-  content: '';
-  position: absolute;
-  top: -30%;
-  right: -30%;
-  width: 100rpx;
-  height: 100rpx;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-  border-radius: 50%;
+  box-shadow: 0 4rpx 16rpx rgba(30, 58, 95, 0.08);
 }
 
 .banner-text-content {
@@ -90,17 +80,17 @@ const handleBannerClick = (item) => {
 
 .banner-title {
   font-size: 26rpx;
-  font-weight: 700;
-  color: #5D4037;
+  font-weight: 600;
+  color: #1E3A5F;
 }
 
 .banner-desc {
   font-size: 20rpx;
-  color: #8D6E63;
+  color: #6B8A9E;
 }
 
 .banner-emoji {
-  font-size: 48rpx;
+  font-size: 44rpx;
   text-align: right;
   z-index: 1;
 }

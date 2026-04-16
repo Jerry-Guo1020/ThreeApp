@@ -2,11 +2,10 @@
   <view class="user-profile">
     <view class="avatar-container">
       <image class="avatar" :src="avatarUrl" mode="aspectFill"></image>
-      <view class="avatar-border"></view>
     </view>
     <view class="user-info">
-      <text class="user-id">{{ userId }}</text>
-      <text class="user-welcome">亲爱的妈妈，欢迎来到您的专属空间</text>
+      <text class="user-name">{{ userName }}</text>
+      <text class="user-id">ID: {{ userId }}</text>
     </view>
     <view class="settings-icon" @click="goToSettings">
       <text class="settings-arrow">›</text>
@@ -17,7 +16,8 @@
 <script setup>
 import { ref } from 'vue';
 
-const avatarUrl = ref('/static/me/avatar-mom.png');
+const avatarUrl = ref('/static/me/avatar-default.png');
+const userName = ref('粤叁荟会员');
 const userId = ref('OdP961365973');
 
 const goToSettings = () => {
@@ -31,33 +31,20 @@ const goToSettings = () => {
 .user-profile {
   display: flex;
   align-items: center;
-  padding: 30rpx 30rpx;
-  background: linear-gradient(180deg, #FDF6F0 0%, #FFF8F3 100%);
+  padding: 24rpx 30rpx;
+  background: linear-gradient(180deg, #E0F2FE 0%, #F0F9FF 100%);
 }
 
 .avatar-container {
-  position: relative;
   margin-right: 24rpx;
 }
 
 .avatar {
-  width: 120rpx;
-  height: 120rpx;
+  width: 100rpx;
+  height: 100rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, #F5E6D3 0%, #FFE4D6 100%);
-  position: relative;
-  z-index: 2;
-}
-
-.avatar-border {
-  position: absolute;
-  top: -4rpx;
-  left: -4rpx;
-  right: -4rpx;
-  bottom: -4rpx;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #E8C4A8 0%, #FFD5C0 100%);
-  z-index: 1;
+  background: linear-gradient(135deg, #E0F2FE 0%, #B8D4E8 100%);
+  border: 3rpx solid rgba(255, 255, 255, 0.8);
 }
 
 .user-info {
@@ -67,16 +54,15 @@ const goToSettings = () => {
   gap: 8rpx;
 }
 
-.user-id {
+.user-name {
   font-size: 32rpx;
   font-weight: 600;
-  color: #5D4E37;
+  color: #1E3A5F;
 }
 
-.user-welcome {
-  font-size: 24rpx;
-  color: #A89078;
-  font-weight: 400;
+.user-id {
+  font-size: 22rpx;
+  color: #6B8A9E;
 }
 
 .settings-icon {
@@ -85,6 +71,6 @@ const goToSettings = () => {
 
 .settings-arrow {
   font-size: 40rpx;
-  color: #C4B096;
+  color: #9AB5C6;
 }
 </style>

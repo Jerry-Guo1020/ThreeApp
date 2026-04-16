@@ -6,7 +6,7 @@
     <!-- 用户信息区域 -->
     <UserProfile />
     
-    <!-- VIP 会员卡 -->
+    <!-- 会员卡 -->
     <VipCard />
     
     <!-- 会员权益 -->
@@ -47,7 +47,7 @@ import ServiceGrid from '@/components/me/ServiceGrid/ServiceGrid.vue';
 <style scoped>
 .me-container {
   min-height: 100vh;
-  background: linear-gradient(180deg, #FDF6F0 0%, #FFF8F3 40%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #E0F2FE 0%, #F0F9FF 50%, #FFFFFF 100%);
   width: 100%;
   padding-bottom: 40rpx;
   box-sizing: border-box;

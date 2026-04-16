@@ -3,12 +3,12 @@
     <view class="coupons-header" @click="viewAllCoupons">
       <view class="coupons-left">
         <view class="coupons-icon-box">
-          <text class="coupons-icon">🎀</text>
+          <text class="coupons-icon">🎫</text>
         </view>
         <text class="coupons-title">我的优惠券</text>
       </view>
       <view class="coupons-right">
-        <text class="coupons-count">{{ couponCount }}张券可用</text>
+        <text class="coupons-count">{{ couponCount }}张可用</text>
         <text class="coupons-arrow">›</text>
       </view>
     </view>
@@ -29,11 +29,11 @@ const viewAllCoupons = () => {
 
 <style scoped>
 .coupons-section {
-  margin: 0 30rpx 24rpx;
+  margin: 0 30rpx 20rpx;
   background: #FFFFFF;
-  border-radius: 24rpx;
+  border-radius: 20rpx;
   padding: 28rpx 24rpx;
-  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2rpx 12rpx rgba(30, 58, 95, 0.06);
 }
 
 .coupons-header {
@@ -49,23 +49,23 @@ const viewAllCoupons = () => {
 }
 
 .coupons-icon-box {
-  width: 60rpx;
-  height: 60rpx;
-  background: linear-gradient(135deg, #FFF4E6 0%, #FFE8D0 100%);
-  border-radius: 16rpx;
+  width: 56rpx;
+  height: 56rpx;
+  background: linear-gradient(135deg, #E0F2FE 0%, #B8D4E8 100%);
+  border-radius: 14rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .coupons-icon {
-  font-size: 28rpx;
+  font-size: 26rpx;
 }
 
 .coupons-title {
-  font-size: 30rpx;
+  font-size: 28rpx;
   font-weight: 600;
-  color: #5D4E37;
+  color: #1E3A5F;
 }
 
 .coupons-right {
@@ -75,13 +75,13 @@ const viewAllCoupons = () => {
 }
 
 .coupons-count {
-  font-size: 26rpx;
-  color: #D4A5A5;
+  font-size: 24rpx;
+  color: #5B8BA8;
   font-weight: 500;
 }
 
 .coupons-arrow {
   font-size: 32rpx;
-  color: #C4B096;
+  color: #9AB5C6;
 }
 </style>

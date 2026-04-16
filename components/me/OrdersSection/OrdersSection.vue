@@ -25,22 +25,22 @@ const orderTypes = ref([
   {
     name: '待付款',
     icon: '💳',
-    bgColor: 'linear-gradient(135deg, #FFE4E6 0%, #FFD6E0 100%)'
+    bgColor: 'linear-gradient(135deg, #E0F2FE 0%, #B8D4E8 100%)'
   },
   {
     name: '待收货',
     icon: '📦',
-    bgColor: 'linear-gradient(135deg, #E6F4E8 0%, #D8E8DC 100%)'
+    bgColor: 'linear-gradient(135deg, #E8F5E9 0%, #B8D4C0 100%)'
   },
   {
     name: '待评价',
     icon: '⭐',
-    bgColor: 'linear-gradient(135deg, #FFF4E6 0%, #FFE8D0 100%)'
+    bgColor: 'linear-gradient(135deg, #FFF8E1 0%, #E8D4B0 100%)'
   },
   {
     name: '售后/退款',
     icon: '🔄',
-    bgColor: 'linear-gradient(135deg, #E8F0F4 0%, #D8E0E8 100%)'
+    bgColor: 'linear-gradient(135deg, #FCE4EC 0%, #E8C0D0 100%)'
   }
 ]);
 
@@ -59,11 +59,11 @@ const handleOrderClick = (item) => {
 
 <style scoped>
 .orders-section {
-  margin: 0 30rpx 24rpx;
+  margin: 0 30rpx 20rpx;
   background: #FFFFFF;
-  border-radius: 24rpx;
+  border-radius: 20rpx;
   padding: 28rpx 24rpx;
-  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2rpx 12rpx rgba(30, 58, 95, 0.06);
 }
 
 .orders-header {
@@ -72,13 +72,13 @@ const handleOrderClick = (item) => {
   align-items: center;
   margin-bottom: 24rpx;
   padding-bottom: 20rpx;
-  border-bottom: 1rpx solid #F5F0EB;
+  border-bottom: 1rpx solid #E8F0F5;
 }
 
 .orders-title {
-  font-size: 30rpx;
+  font-size: 28rpx;
   font-weight: 600;
-  color: #5D4E37;
+  color: #1E3A5F;
 }
 
 .orders-more {
@@ -89,12 +89,12 @@ const handleOrderClick = (item) => {
 
 .orders-more-text {
   font-size: 24rpx;
-  color: #A89078;
+  color: #6B8A9E;
 }
 
 .orders-more-arrow {
   font-size: 28rpx;
-  color: #C4B096;
+  color: #9AB5C6;
 }
 
 .orders-grid {
@@ -110,36 +110,22 @@ const handleOrderClick = (item) => {
 }
 
 .order-icon-box {
-  width: 88rpx;
-  height: 88rpx;
-  border-radius: 24rpx;
+  width: 84rpx;
+  height: 84rpx;
+  border-radius: 20rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.order-icon-box::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
-  border-radius: 50%;
+  box-shadow: 0 4rpx 12rpx rgba(30, 58, 95, 0.08);
 }
 
 .order-icon {
   font-size: 36rpx;
-  position: relative;
-  z-index: 1;
 }
 
 .order-text {
   font-size: 22rpx;
-  color: #6B5B4F;
+  color: #3D5A7A;
   font-weight: 500;
 }
 </style>

@@ -14,19 +14,19 @@ import { ref } from 'vue';
 
 const benefits = ref([
   {
-    name: '专属特惠',
-    icon: '🏷️',
-    bgColor: 'linear-gradient(135deg, #FFE4E6 0%, #FFD6E0 100%)'
+    name: '采购特惠',
+    icon: '💼',
+    bgColor: 'linear-gradient(135deg, #E0F2FE 0%, #B8D4E8 100%)'
   },
   {
-    name: '节日礼品',
-    icon: '🎁',
-    bgColor: 'linear-gradient(135deg, #FFF4E6 0%, #FFE8D0 100%)'
+    name: '专属客服',
+    icon: '🎧',
+    bgColor: 'linear-gradient(135deg, #E8F5E9 0%, #B8D4C0 100%)'
   },
   {
-    name: '优先关怀',
-    icon: '🛡️',
-    bgColor: 'linear-gradient(135deg, #E6F4E8 0%, #D8E8DC 100%)'
+    name: '优先配送',
+    icon: '🚚',
+    bgColor: 'linear-gradient(135deg, #FFF8E1 0%, #E8D4B0 100%)'
   }
 ]);
 </script>
@@ -35,8 +35,8 @@ const benefits = ref([
 .member-benefits {
   display: flex;
   justify-content: space-around;
-  padding: 20rpx 30rpx 40rpx;
-  background: linear-gradient(180deg, #FDF6F0 0%, #FFF8F3 100%);
+  padding: 20rpx 30rpx 32rpx;
+  background: linear-gradient(180deg, #E0F2FE 0%, #F0F9FF 100%);
 }
 
 .benefit-item {
@@ -47,36 +47,26 @@ const benefits = ref([
 }
 
 .benefit-icon-box {
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 28rpx;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 24rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-}
-
-.benefit-icon-box::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
-  border-radius: 50%;
+  box-shadow: 0 4rpx 16rpx rgba(30, 58, 95, 0.1);
 }
 
 .benefit-icon {
-  font-size: 44rpx;
+  font-size: 40rpx;
   position: relative;
   z-index: 1;
 }
 
 .benefit-text {
   font-size: 22rpx;
-  color: #6B5B4F;
+  color: #3D5A7A;
   font-weight: 500;
   text-align: center;
 }
