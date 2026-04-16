@@ -18,16 +18,6 @@
 
         <text class="story-description">{{ config.description }}</text>
 
-        <view class="story-highlights">
-          <view class="highlight-item" v-for="(item, index) in config.highlights" :key="index">
-            <view class="highlight-icon">{{ item.icon }}</view>
-            <view class="highlight-text">
-              <text class="highlight-value">{{ item.value }}</text>
-              <text class="highlight-desc">{{ item.description }}</text>
-            </view>
-          </view>
-        </view>
-
         <view class="story-footer">
           <text class="footer-slogan">{{ config.slogan }}</text>
         </view>
@@ -149,46 +139,6 @@ const containerStyle = computed(() => ({
   line-height: 1.8;
   text-align: justify;
   margin-bottom: 28rpx;
-}
-
-.story-highlights {
-  display: flex;
-  gap: 24rpx;
-  margin-bottom: 28rpx;
-  padding: 24rpx;
-  background: rgba(212, 175, 55, 0.08);
-  border-radius: 20rpx;
-  border: 1rpx solid rgba(212, 175, 55, 0.12);
-}
-
-.highlight-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.highlight-icon {
-  font-size: 44rpx;
-  margin-bottom: 10rpx;
-}
-
-.highlight-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.highlight-value {
-  font-size: 24rpx;
-  font-weight: 700;
-  color: #002046;
-  margin-bottom: 4rpx;
-}
-
-.highlight-desc {
-  font-size: 18rpx;
-  color: #999999;
 }
 
 .story-footer {

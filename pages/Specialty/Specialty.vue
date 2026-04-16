@@ -6,6 +6,9 @@
     <!-- 品牌故事 -->
     <BrandStory :config="brandStoryConfig" />
 
+    <!-- 核心亮点 -->
+    <Highlights />
+
     <!-- 分类导航 -->
     <CategoryBar
       :categories="categories"
@@ -39,6 +42,7 @@
 import { ref, computed } from 'vue';
 import SpecialtyTitle from '@/components/specialty/SpecialtyTitle/SpecialtyTitle.vue';
 import BrandStory from '@/components/specialty/BrandStory/BrandStory.vue';
+import Highlights from '@/components/specialty/Highlights/Highlights.vue';
 import CategoryBar from '@/components/specialty/CategoryBar/CategoryBar.vue';
 import ProductWaterfall from '@/components/specialty/ProductWaterfall/ProductWaterfall.vue';
 import RegionSpecialty from '@/components/specialty/RegionSpecialty/RegionSpecialty.vue';
@@ -62,11 +66,6 @@ const brandStoryConfig = ref({
   label: 'ABOUT SPECIALTY',
   title: '关于特产',
   description: '广东特产源远流长，承载着岭南大地千年的饮食文化。从清远走地鸡的鲜嫩多汁，到英德红茶的醇厚香甜，每一款特产都是大自然与匠人智慧的完美结合。',
-  highlights: [
-    { icon: '🌿', value: '原产地直供', description: '正宗产地' },
-    { icon: '✋', value: '手工制作', description: '传统工艺' },
-    { icon: '✅', value: '品质保证', description: '严格筛选' }
-  ],
   slogan: '岭南风味 · 传承经典'
 });
 

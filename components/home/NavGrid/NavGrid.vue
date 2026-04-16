@@ -22,13 +22,13 @@ const navList = ref([
     name: '冷库工程',
     iconUrl: '/static/home/NavGrid/冷库.png',
     bgColor: '#ffffff',
-    linkUrl: '/pages/cold/cold'
+    linkUrl: '/pages/cold/Cold'
   },
   {
     name: '酒水精选',
     iconUrl: '/static/home/NavGrid/酒水.png',
     bgColor: '#fdedec',
-    linkUrl: '/pages/wine/wine'
+    linkUrl: '/pages/wine/Wine'
   },
   {
     name: '岭南特产',
@@ -41,7 +41,7 @@ const navList = ref([
 
 const handleClick = (item) => {
   if (item.linkUrl) {
-    uni.navigateTo({
+    uni.switchTab({
       url: item.linkUrl
     });
   }
