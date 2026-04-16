@@ -1,0 +1,54 @@
+/* 全局主题颜色变量 - 粤叁荟企业商务主题 */
+
+/* 主色调 - 深蓝商务系 */
+--color-primary: #1E3A5F;        /* 深蓝 - 主品牌色 */
+--color-primary-light: #3D5A7A;  /* 中蓝 */
+--color-primary-dark: #0F2438;   /* 深蓝黑 */
+
+/* 辅助色 - 浅蓝系 */
+--color-secondary: #5B8BA8;      /* 灰蓝 */
+--color-secondary-light: #8AB8C9; /* 浅蓝灰 */
+
+/* 强调色 - 金色 */
+--color-accent: #C9A86A;         /* 商务金 */
+--color-accent-light: #D4BC8A;   /* 浅金 */
+
+/* 背景色 - 浅蓝到白渐变 */
+--bg-primary: #E0F2FE;           /* 浅天蓝 - 主背景起点 */
+--bg-secondary: #F0F9FF;         /* 极浅蓝 */
+--bg-white: #FFFFFF;             /* 纯白 */
+
+/* 文字色 */
+--text-primary: #1E3A5F;         /* 深蓝 - 主文字 */
+--text-secondary: #3D5A7A;       /* 中蓝 - 次要文字 */
+--text-muted: #6B8A9E;           /* 灰蓝 - 提示文字 */
+--text-light: #9AB5C6;           /* 浅灰蓝 - 辅助文字 */
+
+/* 功能色 */
+--color-success: #4CA8A8;        /* 蓝绿 */
+--color-warning: #D4A84C;        /* 商务黄 */
+--color-info: #5B8BA8;           /* 信息蓝 */
+--color-error: #C97A7A;          /* 柔和红 */
+
+/* 渐变色 */
+--gradient-main: linear-gradient(180deg, #E0F2FE 0%, #F0F9FF 50%, #FFFFFF 100%);
+--gradient-blue: linear-gradient(135deg, #1E3A5F 0%, #3D5A7A 100%);
+--gradient-light-blue: linear-gradient(135deg, #E0F2FE 0%, #F0F9FF 100%);
+--gradient-gold: linear-gradient(135deg, #C9A86A 0%, #D4BC8A 100%);
+
+/* 阴影 - 轻盈通透 */
+--shadow-soft: 0 2rpx 12rpx rgba(30, 58, 95, 0.08);
+--shadow-medium: 0 4rpx 20rpx rgba(30, 58, 95, 0.12);
+--shadow-strong: 0 8rpx 32rpx rgba(30, 58, 95, 0.16);
+
+/* 圆角 - 柔和但专业 */
+--radius-small: 12rpx;
+--radius-medium: 16rpx;
+--radius-large: 24rpx;
+--radius-xl: 28rpx;
+--radius-round: 50%;
+
+/* 毛玻璃效果 */
+--glass-bg: rgba(255, 255, 255, 0.7);
+--glass-border: rgba(255, 255, 255, 0.5);
+--glass-shadow: 0 8rpx 32rpx rgba(30, 58, 95, 0.1);

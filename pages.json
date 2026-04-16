@@ -57,10 +57,10 @@
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
-		"color": "#999999",
-		"selectedColor": "#1296db",
+		"color": "#9AB5C6",
+		"selectedColor": "#1E3A5F",
 		"backgroundColor": "#ffffff",
-		"borderStyle": "black",
+		"borderStyle": "white",
 		"height": "50px",
 		"fontSize": "10px",
 		"iconWidth": "24px",
@@ -75,7 +75,7 @@
 				"pagePath": "pages/wine/Wine",
 				"iconPath": "/static/logo/酒水.png",
 				"selectedIconPath": "/static/logo/酒水 (1).png",
-				"text": "酒"
+				"text": "酒水"
 			},
 			{
 				"pagePath": "pages/cold/Cold",
