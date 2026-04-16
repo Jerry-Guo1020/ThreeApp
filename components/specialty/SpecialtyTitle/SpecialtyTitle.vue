@@ -1,9 +1,11 @@
 <template>
   <view class="specialty-title-section" :style="containerStyle">
     <view class="title-content" :style="{ paddingTop: safeAreaTop + 'px' }">
-      <view class="title-badge">
-        <text class="badge-icon">🍊</text>
-        <text class="badge-text">{{ badgeText }}</text>
+      <view class="title-header">
+        <view class="title-badge">
+          <text class="badge-icon">🎁</text>
+          <text class="badge-text">广东地道风味</text>
+        </view>
       </view>
       <text class="title-main">{{ title }}</text>
       <text class="title-subtitle">{{ subtitle }}</text>
@@ -17,10 +19,6 @@
 import { ref, computed, onMounted } from 'vue';
 
 defineProps({
-  badgeText: {
-    type: String,
-    default: '岭南甄选'
-  },
   title: {
     type: String,
     default: '广东特产'
@@ -31,7 +29,7 @@ defineProps({
   },
   description: {
     type: String,
-    default: '地道风味 · 匠心传承 · 品质保证'
+    default: '清远地道风味 · 新鲜直达'
   }
 });
 
@@ -65,71 +63,73 @@ const containerStyle = computed(() => ({
 <style lang="scss" scoped>
 .specialty-title-section {
   width: 100%;
-  padding: 40rpx 40rpx 30rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-top: var(--safe-area-top);
+  padding-bottom: 40rpx;
   box-sizing: border-box;
-  background: linear-gradient(180deg, rgba(255, 249, 235, 0.8) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
 .title-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.title-header {
+  margin-bottom: 20rpx;
 }
 
 .title-badge {
   display: inline-flex;
   align-items: center;
-  padding: 10rpx 28rpx;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(255, 183, 77, 0.08));
-  border-radius: 24rpx;
-  border: 1rpx solid rgba(212, 175, 55, 0.2);
-  margin-bottom: 20rpx;
+  padding: 10rpx 24rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid rgba(0,32,70,0.1);
 }
 
 .badge-icon {
-  font-size: 30rpx;
+  font-size: 28rpx;
   margin-right: 12rpx;
 }
 
 .badge-text {
   font-size: 24rpx;
-  color: #b8860b;
+  color: #002046;
   font-weight: 600;
   letter-spacing: 2px;
 }
 
 .title-main {
-  font-size: 68rpx;
+  font-size: 72rpx;
   font-weight: 900;
   color: #002046;
-  letter-spacing: 14px;
+  letter-spacing: 16px;
   line-height: 1.1;
   margin-bottom: 16rpx;
-  text-shadow: 2rpx 2rpx 4rpx rgba(0, 32, 70, 0.1);
+  text-shadow: 2rpx 2rpx 4rpx rgba(0,32,70,0.1);
 }
 
 .title-subtitle {
-  font-size: 24rpx;
+  font-size: 26rpx;
   color: #999999;
   font-weight: 500;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   text-transform: uppercase;
-  margin-bottom: 28rpx;
+  margin-bottom: 32rpx;
 }
 
 .title-divider {
-  width: 120rpx;
-  height: 4rpx;
-  background: linear-gradient(90deg, transparent, #d4af37, transparent);
-  margin-bottom: 28rpx;
-  border-radius: 2rpx;
+  width: 100%;
+  height: 2rpx;
+  margin-bottom: 32rpx;
+  max-width: 300rpx;
 }
 
 .title-desc {
   font-size: 26rpx;
   color: #666666;
   font-weight: 400;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   line-height: 1.5;
 }
 </style>
