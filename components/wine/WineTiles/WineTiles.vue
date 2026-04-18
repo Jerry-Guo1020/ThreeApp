@@ -5,7 +5,6 @@
       <view class="tile-card tile-large-left" :style="{ backgroundImage: `url(${tiles[0].bgImage})` }">
         <view class="tile-overlay"></view>
         <view class="tile-content">
-          <image class="tile-icon" :src="tiles[0].iconUrl" mode="aspectFit"></image>
           <text class="tile-title">{{ tiles[0].title }}</text>
           <text class="tile-desc">{{ tiles[0].description }}</text>
         </view>
@@ -15,27 +14,24 @@
       <view class="tile-card tile-large-right" :style="{ backgroundImage: `url(${tiles[1].bgImage})` }">
         <view class="tile-overlay"></view>
         <view class="tile-content">
-          <image class="tile-icon" :src="tiles[1].iconUrl" mode="aspectFit"></image>
           <text class="tile-title">{{ tiles[1].title }}</text>
           <text class="tile-desc">{{ tiles[1].description }}</text>
         </view>
       </view>
 
-      <!-- 中左小卡片 - 文创礼酒 -->
-      <view class="tile-card tile-small-left" :style="{ backgroundImage: `url(${tiles[2].bgImage})` }">
+      <!-- 中左小卡片 - 福莱好日子 (40% 宽) -->
+      <view class="tile-card tile-medium-left" :style="{ backgroundImage: `url(${tiles[2].bgImage})` }">
         <view class="tile-overlay"></view>
         <view class="tile-content">
-          <image class="tile-icon" :src="tiles[2].iconUrl" mode="aspectFit"></image>
           <text class="tile-title">{{ tiles[2].title }}</text>
           <text class="tile-desc">{{ tiles[2].description }}</text>
         </view>
       </view>
 
-      <!-- 中右小卡片 - 生肖定制 -->
-      <view class="tile-card tile-small-right" :style="{ backgroundImage: `url(${tiles[3].bgImage})` }">
+      <!-- 中右小卡片 - 生肖定制 (60% 宽) -->
+      <view class="tile-card tile-medium-right" :style="{ backgroundImage: `url(${tiles[3].bgImage})` }">
         <view class="tile-overlay"></view>
         <view class="tile-content">
-          <image class="tile-icon" :src="tiles[3].iconUrl" mode="aspectFit"></image>
           <text class="tile-title">{{ tiles[3].title }}</text>
           <text class="tile-desc">{{ tiles[3].description }}</text>
         </view>
@@ -45,7 +41,6 @@
       <view class="tile-card tile-small-bottom-left" :style="{ backgroundImage: `url(${tiles[4].bgImage})` }">
         <view class="tile-overlay"></view>
         <view class="tile-content">
-          <image class="tile-icon" :src="tiles[4].iconUrl" mode="aspectFit"></image>
           <text class="tile-title">{{ tiles[4].title }}</text>
           <text class="tile-desc">{{ tiles[4].description }}</text>
         </view>
@@ -55,7 +50,6 @@
       <view class="tile-card tile-small-bottom-right" :style="{ backgroundImage: `url(${tiles[5].bgImage})` }">
         <view class="tile-overlay"></view>
         <view class="tile-content">
-          <image class="tile-icon" :src="tiles[5].iconUrl" mode="aspectFit"></image>
           <text class="tile-title">{{ tiles[5].title }}</text>
           <text class="tile-desc">{{ tiles[5].description }}</text>
         </view>
@@ -80,8 +74,8 @@ const tiles = ref([
   {
     title: '波本蓝君邑 XO',
     description: '高端威士忌 · 醇厚绵柔',
-    iconUrl: '/static/wine/波本蓝君邑 xo 酒水.png',
-    bgImage: '/static/wine/波本蓝君邑 xo 产品.jpg'
+    iconUrl: '/static/wine/波本蓝君邑xo酒水.png',
+    bgImage: '/static/wine/波本蓝君邑xo产品.jpg'
   },
   {
     title: '西凤酒',
@@ -166,28 +160,23 @@ const tiles = ref([
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 20rpx;
-}
-
-.tile-icon {
-  width: 80rpx;
-  height: 80rpx;
-  margin-bottom: 12rpx;
-  object-fit: contain;
+  padding: 24rpx 20rpx;
 }
 
 .tile-title {
-  font-size: 28rpx;
+  font-size: 30rpx;
   font-weight: 700;
-  color: #8b4513;
-  margin-bottom: 6rpx;
+  color: #3d2817;
+  margin-bottom: 8rpx;
   text-align: center;
+  text-shadow: 0 1rpx 2rpx rgba(255, 255, 255, 0.8);
 }
 
 .tile-desc {
-  font-size: 20rpx;
-  color: #a0825a;
+  font-size: 22rpx;
+  color: #4a3728;
   text-align: center;
+  text-shadow: 0 1rpx 2rpx rgba(255, 255, 255, 0.8);
 }
 
 /* 左上大卡片 - 占 3x2 格 */
@@ -202,15 +191,15 @@ const tiles = ref([
   grid-row: 1 / 3;
 }
 
-/* 中左小卡片 - 占 2x1 格 */
-.tile-small-left {
-  grid-column: 1 / 3;
+/* 中左小卡片 - 福莱好日子 (占 40% 宽，约 2.4 格) */
+.tile-medium-left {
+  grid-column: 1 / 4;
   grid-row: 3 / 4;
 }
 
-/* 中右小卡片 - 占 2x1 格 */
-.tile-small-right {
-  grid-column: 3 / 5;
+/* 中右小卡片 - 生肖定制 (占 60% 宽，约 3.6 格) */
+.tile-medium-right {
+  grid-column: 4 / 7;
   grid-row: 3 / 4;
 }
 

@@ -63,11 +63,9 @@ const containerStyle = computed(() => ({
 <style lang="scss" scoped>
 .specialty-title-section {
   width: 100%;
-  padding-left: 40rpx;
-  padding-right: 40rpx;
-  padding-top: var(--safe-area-top);
-  padding-bottom: 40rpx;
+  padding: 40rpx 40rpx 40rpx;
   box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(255, 250, 245, 0.9) 0%, rgba(255, 255, 250, 1) 100%);
 }
 
 .title-content {
@@ -83,8 +81,9 @@ const containerStyle = computed(() => ({
   display: inline-flex;
   align-items: center;
   padding: 10rpx 24rpx;
+  background: linear-gradient(135deg, rgba(201, 169, 89, 0.12), rgba(212, 175, 55, 0.06));
   border-radius: 20rpx;
-  border: 1rpx solid rgba(0,32,70,0.1);
+  border: 1rpx solid rgba(201, 169, 89, 0.15);
 }
 
 .badge-icon {
@@ -94,7 +93,7 @@ const containerStyle = computed(() => ({
 
 .badge-text {
   font-size: 24rpx;
-  color: #002046;
+  color: #c9a959;
   font-weight: 600;
   letter-spacing: 2px;
 }
@@ -102,11 +101,11 @@ const containerStyle = computed(() => ({
 .title-main {
   font-size: 72rpx;
   font-weight: 900;
-  color: #002046;
+  color: #8b4513;
   letter-spacing: 16px;
   line-height: 1.1;
   margin-bottom: 16rpx;
-  text-shadow: 2rpx 2rpx 4rpx rgba(0,32,70,0.1);
+  text-shadow: 2rpx 2rpx 4rpx rgba(139, 69, 19, 0.15);
 }
 
 .title-subtitle {
@@ -121,6 +120,7 @@ const containerStyle = computed(() => ({
 .title-divider {
   width: 100%;
   height: 2rpx;
+  background: linear-gradient(90deg, transparent, #c9a959, transparent);
   margin-bottom: 32rpx;
   max-width: 300rpx;
 }

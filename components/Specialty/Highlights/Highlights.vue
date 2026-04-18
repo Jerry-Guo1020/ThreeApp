@@ -1,5 +1,5 @@
 <template>
-  <view class="highlights-section" :style="containerStyle">
+  <view class="highlights-section" >
     <view class="highlights-container">
       <view class="highlight-item" v-for="(item, index) in highlights" :key="index">
         <image
