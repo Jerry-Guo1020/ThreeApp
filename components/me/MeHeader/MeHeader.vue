@@ -1,37 +1,81 @@
 <template>
-  <view class="me-header" :style="{ paddingTop: safeAreaTop + 'px' }">
+  <view
+    class="me-header"
+    :class="{ 'header-visible': visible }"
+    :style="headerStyle"
+  >
     <view class="header-content">
-      <text class="header-title">个人中心</text>
-      <view class="header-icons">
-        <text class="header-icon" @click="handleSettings">⚙️</text>
+      <view class="header-left">
+        <text class="header-icon" @click="handleMenu">&#xe5d2;</text>
+        <text class="header-title">建筑级收藏</text>
+      </view>
+      <view class="header-right">
+        <text class="header-icon" @click="handleSupport">&#xe947;</text>
       </view>
     </view>
   </view>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted, defineProps } from 'vue';
 
+defineProps({
+  visible: {
+    type: Boolean,
+    default: false
+  }
+});
+
+const statusBarHeight = ref(0);
+const navBarHeight = ref(44);
 const safeAreaTop = ref(0);
+const menuButtonWidth = ref(0);
 
 onMounted(() => {
   const systemInfo = uni.getSystemInfoSync();
-  safeAreaTop.value = systemInfo.statusBarHeight || 20;
+  statusBarHeight.value = systemInfo.statusBarHeight || 20;
+
+  // #ifdef MP-WEIXIN
+  const menuButtonInfo = uni.getMenuButtonBoundingClientRect();
+  navBarHeight.value = menuButtonInfo.top + menuButtonInfo.height + 6;
+  safeAreaTop.value = statusBarHeight.value;
+  menuButtonWidth.value = menuButtonInfo.width + 20; // 胶囊按钮宽度 + 安全边距
+  // #endif
+
+  // #ifndef MP-WEIXIN
+  navBarHeight.value = 44;
+  safeAreaTop.value = statusBarHeight.value;
+  // #endif
 });
 
-const handleSettings = () => {
-  uni.navigateTo({
-    url: '/pages/settings/settings'
-  });
-};
+const headerStyle = computed(() => ({
+  paddingTop: safeAreaTop.value + 'px',
+  height: navBarHeight.value + 'px',
+  paddingRight: menuButtonWidth.value + 'px'
+}));
 </script>
 
 <style scoped>
 .me-header {
-  width: 100%;
-  background: linear-gradient(180deg, #E0F2FE 0%, #F0F9FF 100%);
-  padding-bottom: 16rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.me-header.header-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .header-content {
@@ -39,22 +83,53 @@ const handleSettings = () => {
   justify-content: space-between;
   align-items: center;
   padding: 0 30rpx;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.header-title {
-  font-size: 36rpx;
-  font-weight: 600;
-  color: #1E3A5F;
-  letter-spacing: 1px;
-}
-
-.header-icons {
+.header-left {
   display: flex;
-  gap: 20rpx;
+  align-items: center;
+  gap: 10rpx;
 }
 
 .header-icon {
-  font-size: 36rpx;
-  padding: 10rpx;
+  font-size: 40rpx;
+  color: #002046;
+  cursor: pointer;
+  font-family: 'Material Icons Outlined', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+.header-icon:active {
+  opacity: 0.7;
+}
+
+.header-title {
+  font-size: 32rpx;
+  font-weight: 900;
+  color: #002046;
+  letter-spacing: 2px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'Material Icons Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v140/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format('woff2');
 }
 </style>

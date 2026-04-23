@@ -1,59 +1,51 @@
 <template>
   <view class="me-container">
-    <!-- 顶部 Header -->
-    <MeHeader />
-    
+    <!-- 顶部导航栏 - 滚动到一定距离后显示 -->
+    <MeHeader :visible="showHeader" />
+
     <!-- 用户信息区域 -->
     <UserProfile />
-    
-    <!-- 会员卡 -->
-    <VipCard />
-    
-    <!-- 会员权益 -->
-    <MemberBenefits />
-    
-    <!-- 优惠券区域 -->
-    <CouponsSection />
-    
-    <!-- 订单区域 -->
-    <OrdersSection />
-    
-    <!-- 推广横幅 -->
-    <PromotionBanners />
-    
-    <!-- 服务网格 -->
-    <ServiceGrid />
-    
-    <!-- 底部占位，防止内容被 TabBar 遮挡 -->
-    <view class="bottom-spacer"></view>
-    
-    <!-- 自定义 TabBar（可选，如使用原生 tabBar 可移除） -->
-    <!-- <TabBar /> -->
+
+    <!-- 统计数据网格 -->
+    <StatsGrid />
+
+    <!-- 留言记录区域 -->
+    <InquiryHistory />
+
+    <!-- 企业信息区域 -->
+    <CorporateInfo />
+
+    <!-- 账号操作区域 -->
+    <AccountActions />
   </view>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import { onPageScroll } from '@dcloudio/uni-app';
 import MeHeader from '@/components/me/MeHeader/MeHeader.vue';
 import UserProfile from '@/components/me/UserProfile/UserProfile.vue';
-import VipCard from '@/components/me/VipCard/VipCard.vue';
-import MemberBenefits from '@/components/me/MemberBenefits/MemberBenefits.vue';
-import CouponsSection from '@/components/me/CouponsSection/CouponsSection.vue';
-import OrdersSection from '@/components/me/OrdersSection/OrdersSection.vue';
-import PromotionBanners from '@/components/me/PromotionBanners/PromotionBanners.vue';
-import ServiceGrid from '@/components/me/ServiceGrid/ServiceGrid.vue';
-// import TabBar from '@/components/me/TabBar/TabBar.vue';
+import StatsGrid from '@/components/me/StatsGrid/StatsGrid.vue';
+import InquiryHistory from '@/components/me/InquiryHistory/InquiryHistory.vue';
+import CorporateInfo from '@/components/me/CorporateInfo/CorporateInfo.vue';
+import AccountActions from '@/components/me/AccountActions/AccountActions.vue';
+
+// 控制 Header 显示/隐藏
+const showHeader = ref(false);
+const headerShowThreshold = 100; // 滚动超过这个距离显示 Header（单位 px）
+
+// 使用 uni-app 的 onPageScroll 生命周期
+onPageScroll((e) => {
+  const scrollTop = e.scrollTop;
+  showHeader.value = scrollTop > headerShowThreshold;
+});
 </script>
 
 <style scoped>
 .me-container {
   min-height: 100vh;
-  background: linear-gradient(180deg, #E0F2FE 0%, #F0F9FF 50%, #FFFFFF 100%);
-  width: 100%;
-  padding-bottom: 40rpx;
+  background-color: #f8f9fa;
+  padding-bottom: 120rpx;
   box-sizing: border-box;
-}
-
-.bottom-spacer {
-  height: 140rpx;
 }
 </style>
