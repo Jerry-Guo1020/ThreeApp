@@ -1,5 +1,8 @@
 <template>
   <view class="cold-page">
+    <!-- 顶部导航栏 - 滚动到一定距离后显示 -->
+    <PageHeader :visible="showHeader" title="冷库工程" @menu-click="handleMenu" @support-click="handleSupport" />
+
     <!-- 顶部标题 -->
     <ColdTitle
       :badge-text="pageConfig.titleConfig.badgeText"
@@ -26,6 +29,9 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import { onPageScroll } from '@dcloudio/uni-app';
+import PageHeader from '@/components/common/PageHeader/PageHeader.vue';
 import ColdTitle from '@/components/Cold/ColdTitle/ColdTitle.vue'
 import ProjectIntro from '@/components/Cold/ProjectIntro/ProjectIntro.vue'
 import FeatureCards from '@/components/Cold/FeatureCards/FeatureCards.vue'
@@ -49,7 +55,7 @@ const pageConfig = {
       { value: '-25', unit: '℃ 最低温度' },
       { value: '5000', unit: '吨 日吞吐量' }
     ],
-    description: '本项目采用先进的冷链物流技术，配备智能化温控系统，为生鲜食品、医药产品提供专业的仓储和配送服务。'
+    description: '我们提供专业的冷库工程建设服务，从需求咨询到施工安装一站式解决方案，为客户打造高效、节能、智能的现代化冷库。'
   },
   featureCardsConfig: {
     label: 'CORE ADVANTAGES',
@@ -57,22 +63,22 @@ const pageConfig = {
     features: [
       { icon: '🌡️', name: '智能温控', description: '全天候自动监测，精准控温±0.5℃' },
       { icon: '📊', name: '数据可视', description: '实时数据大屏，运营状态一目了然' },
-      { icon: '🚚', name: '高效配送', description: '冷链车队覆盖全省，24 小时直达' },
+      { icon: '🔧', name: '专业施工', description: '资深工程师团队，标准化施工流程' },
       { icon: '🛡️', name: '品质保障', description: 'HACCP 认证体系，全程可追溯' },
       { icon: '💡', name: '节能环保', description: '一级能效设备，绿色制冷技术' },
-      { icon: '🔧', name: '专业运维', description: '7×24 小时技术支持，快速响应' }
+      { icon: '🏗️', name: '快速交付', description: '高效施工，3-7 天完成安装调试' }
     ]
   },
   processStepsConfig: {
     label: 'SERVICE PROCESS',
     title: '服务流程',
     steps: [
-      { name: '需求咨询', duration: '即时响应', description: '专业客服一对一沟通，了解您的冷链需求' },
-      { name: '方案定制', duration: '1-2 工作日', description: '根据货物特性制定个性化仓储方案' },
-      { name: '签约入驻', duration: '快速办理', description: '简化流程，高效完成入库手续' },
-      { name: '货物入库', duration: '预约优先', description: '专业装卸团队，确保货物安全入库' },
-      { name: '仓储管理', duration: '7×24 小时', description: '智能监控，定期巡检，实时汇报' },
-      { name: '出库配送', duration: '准时达', description: '冷链专车配送，全程温控记录' }
+      { name: '需求咨询', duration: '即时响应', description: '专业客服一对一沟通，了解您的冷库建设需求' },
+      { name: '方案设计', duration: '1-2 工作日', description: '根据场地和存储需求，制定个性化冷库设计方案' },
+      { name: '签约合作', duration: '快速办理', description: '明确项目细节，签订建设合同' },
+      { name: '施工安装', duration: '3-7 工作日', description: '专业团队现场施工，安装制冷设备和温控系统' },
+      { name: '调试验收', duration: '1-2 工作日', description: '系统联调测试，温度达标后交付验收' },
+      { name: '售后运维', duration: '7×24 小时', description: '定期巡检维护，提供技术支持和故障维修服务' }
     ]
   },
   serviceScenesConfig: {
@@ -86,6 +92,30 @@ const pageConfig = {
     ]
   }
 }
+
+// 控制 Header 显示/隐藏
+const showHeader = ref(false);
+const headerShowThreshold = 100;
+
+// 使用 uni-app 的 onPageScroll 生命周期
+onPageScroll((e) => {
+  const scrollTop = e.scrollTop;
+  showHeader.value = scrollTop > headerShowThreshold;
+});
+
+const handleMenu = () => {
+  uni.showToast({
+    title: '菜单功能开发中',
+    icon: 'none'
+  });
+};
+
+const handleSupport = () => {
+  uni.showToast({
+    title: '客服功能开发中',
+    icon: 'none'
+  });
+};
 
 // ===== 事件处理函数 =====
 const handleSceneTap = (scene) => {

@@ -1,5 +1,8 @@
 <template>
   <view class="wine-page">
+    <!-- 顶部导航栏 - 滚动到一定距离后显示 -->
+    <PageHeader :visible="showHeader" title="酒水精选" @menu-click="handleMenu" @support-click="handleSupport" />
+
     <!-- 顶部标题 -->
     <WineTitle />
 
@@ -20,17 +23,43 @@
 
     <!-- 底部留白，避免被导航栏遮挡 -->
     <view style="height: 120rpx;"></view>
-
   </view>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import { onPageScroll } from '@dcloudio/uni-app';
+import PageHeader from '@/components/common/PageHeader/PageHeader.vue';
 import WineTitle from '@/components/wine/WineTitle/WineTitle.vue';
 import WineBanner from '@/components/wine/WineBanner/WineBanner.vue';
 import WineTiles from '@/components/wine/WineTiles/WineTiles.vue';
 import WineTopSellers from '@/components/wine/WineTopSellers/WineTopSellers.vue';
 import WineUseCases from '@/components/wine/WineUseCases/WineUseCases.vue';
 import WineContact from '@/components/wine/WineContact/WineContact.vue';
+
+// 控制 Header 显示/隐藏
+const showHeader = ref(false);
+const headerShowThreshold = 100;
+
+// 使用 uni-app 的 onPageScroll 生命周期
+onPageScroll((e) => {
+  const scrollTop = e.scrollTop;
+  showHeader.value = scrollTop > headerShowThreshold;
+});
+
+const handleMenu = () => {
+  uni.showToast({
+    title: '菜单功能开发中',
+    icon: 'none'
+  });
+};
+
+const handleSupport = () => {
+  uni.showToast({
+    title: '客服功能开发中',
+    icon: 'none'
+  });
+};
 </script>
 
 <style lang="scss" scoped>

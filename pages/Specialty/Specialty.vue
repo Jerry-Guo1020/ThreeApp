@@ -1,5 +1,8 @@
 <template>
   <view class="specialty-page">
+    <!-- 顶部导航栏 - 滚动到一定距离后显示 -->
+    <PageHeader :visible="showHeader" title="岭南特产" @menu-click="handleMenu" @support-click="handleSupport" />
+
     <!-- 顶部标题 -->
     <SpecialtyTitle />
 
@@ -40,6 +43,8 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import { onPageScroll } from '@dcloudio/uni-app';
+import PageHeader from '@/components/common/PageHeader/PageHeader.vue';
 import SpecialtyTitle from '@/components/specialty/SpecialtyTitle/SpecialtyTitle.vue';
 import BrandStory from '@/components/specialty/BrandStory/BrandStory.vue';
 import Highlights from '@/components/specialty/Highlights/Highlights.vue';
@@ -251,6 +256,30 @@ const filteredProducts = computed(() => {
   }
   return products.value.filter(p => p.category === selectedCategory.value);
 });
+
+// 控制 Header 显示/隐藏
+const showHeader = ref(false);
+const headerShowThreshold = 100;
+
+// 使用 uni-app 的 onPageScroll 生命周期
+onPageScroll((e) => {
+  const scrollTop = e.scrollTop;
+  showHeader.value = scrollTop > headerShowThreshold;
+});
+
+const handleMenu = () => {
+  uni.showToast({
+    title: '菜单功能开发中',
+    icon: 'none'
+  });
+};
+
+const handleSupport = () => {
+  uni.showToast({
+    title: '客服功能开发中',
+    icon: 'none'
+  });
+};
 
 // ===== 事件处理函数 =====
 const handleCategoryChange = (item) => {
