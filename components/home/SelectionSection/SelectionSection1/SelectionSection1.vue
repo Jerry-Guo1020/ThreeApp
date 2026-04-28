@@ -9,7 +9,7 @@
 
     <view class="case-list">
       <!-- 大卡片 - 工程案例 -->
-      <view class="case-card case-card-large" v-for="(item, index) in caseList" :key="index">
+      <view class="case-card case-card-large" v-for="(item, index) in caseList" :key="index" @tap="goToDetail(item)">
         <view class="case-image-wrapper">
           <image class="case-image" :src="item.imageUrl" mode="aspectFill"></image>
           <view class="case-tag" v-if="item.tag">
@@ -55,6 +55,14 @@ const caseList = ref([
     award: '2024 年度设计大奖'
   }
 ]);
+
+const goToDetail = (item) => {
+  if (item.id === 1) {
+    uni.navigateTo({
+      url: `/pages/cold/details/details?id=${item.id}`
+    });
+  }
+};
 </script>
 
 <style scoped>

@@ -18,7 +18,7 @@ defineProps({
   },
   subtitle: {
     type: String,
-    default: 'LINGNAN SELECTION'
+    default: 'YUESAN HUI'
   },
   description: {
     type: String,

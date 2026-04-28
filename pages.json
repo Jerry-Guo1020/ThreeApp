@@ -47,6 +47,12 @@
 			"style": {
 				"navigationBarTitleText": ""
 			}
+		},
+		{
+			"path": "pages/cold/details/details",
+			"style": {
+				"navigationBarTitleText": "案例详情"
+			}
 		}
 	],
 	"globalStyle": {
