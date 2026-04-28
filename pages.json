@@ -53,6 +53,12 @@
 			"style": {
 				"navigationBarTitleText": "案例详情"
 			}
+		},
+		{
+			"path": "pages/wine/detail/detail",
+			"style": {
+				"navigationBarTitleText": ""
+			}
 		}
 	],
 	"globalStyle": {

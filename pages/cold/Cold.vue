@@ -14,9 +14,6 @@
     <!-- 项目概况 -->
     <ProjectIntro :config="pageConfig.projectIntroConfig" />
 
-    <!-- 核心优势 -->
-    <FeatureCards :config="pageConfig.featureCardsConfig" />
-
     <!-- 服务流程 -->
     <ProcessSteps :config="pageConfig.processStepsConfig" />
 
@@ -25,6 +22,9 @@
       :config="pageConfig.serviceScenesConfig"
       @scene-tap="handleSceneTap"
     />
+
+    <!-- 社交媒体联系方式 -->
+    <SocialCards />
   </view>
 </template>
 
@@ -32,11 +32,11 @@
 import { ref } from 'vue';
 import { onPageScroll } from '@dcloudio/uni-app';
 import PageHeader from '@/components/common/PageHeader/PageHeader.vue';
-import ColdTitle from '@/components/Cold/ColdTitle/ColdTitle.vue'
-import ProjectIntro from '@/components/Cold/ProjectIntro/ProjectIntro.vue'
-import FeatureCards from '@/components/Cold/FeatureCards/FeatureCards.vue'
-import ProcessSteps from '@/components/Cold/ProcessSteps/ProcessSteps.vue'
-import ServiceScenes from '@/components/Cold/ServiceScenes/ServiceScenes.vue'
+import ColdTitle from '@/components/cold/ColdTitle/ColdTitle.vue'
+import ProjectIntro from '@/components/cold/ProjectIntro/ProjectIntro.vue'
+import ProcessSteps from '@/components/cold/ProcessSteps/ProcessSteps.vue'
+import ServiceScenes from '@/components/cold/ServiceScenes/ServiceScenes.vue'
+import SocialCards from '@/components/cold/SocialCards/SocialCards.vue'
 
 // ===== 页面配置数据 =====
 const pageConfig = {
