@@ -54,11 +54,14 @@ const sellers = ref([
 ]);
 
 const handleSellerTap = (item) => {
-  uni.showToast({
-    title: `查看：${item.name}`,
-    icon: 'none',
-    duration: 1500
-  });
+  // uni.showToast({
+  //   title: `查看：${item.name}`,
+  //   icon: 'none',
+  //   duration: 1500
+  // });
+  uni.navigateTo({
+  	url:'/pages/wine/detail/detail'
+  })
 };
 </script>
 

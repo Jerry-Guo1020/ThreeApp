@@ -1,7 +1,7 @@
 <template>
   <view class="detail-page">
     <!-- 顶部Banner -->
-    <view class="detail-banner">
+    <view class="detail-banner" :style="{ paddingTop: statusBarHeight + 'px' }">
       <image class="banner-image" :src="detailData.coverImage" mode="aspectFill"></image>
       <view class="banner-overlay"></view>
       <view class="banner-content">
@@ -108,6 +108,13 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+
+const statusBarHeight = ref(0);
+
+onMounted(() => {
+  const systemInfo = uni.getSystemInfoSync();
+  statusBarHeight.value = systemInfo.statusBarHeight || 0;
+});
 
 const detailData = ref({
   tag: 'CASE STUDY',
