@@ -1,7 +1,11 @@
 <template>
   <view class="cold-page">
     <!-- 顶部导航栏 - 滚动到一定距离后显示 -->
-    <PageHeader :visible="showHeader" title="冷库工程" @menu-click="handleMenu" @support-click="handleSupport" />
+    <PageHeader
+      :visible="showHeader"
+      title="冷库工程"
+      :menu-icon-url="headerMenuIconUrl"
+    />
 
     <!-- 顶部标题 -->
     <ColdTitle
@@ -96,26 +100,13 @@ const pageConfig = {
 // 控制 Header 显示/隐藏
 const showHeader = ref(false);
 const headerShowThreshold = 100;
+const headerMenuIconUrl = '/static/home/NavGrid/冷库.png';
 
 // 使用 uni-app 的 onPageScroll 生命周期
 onPageScroll((e) => {
   const scrollTop = e.scrollTop;
   showHeader.value = scrollTop > headerShowThreshold;
 });
-
-const handleMenu = () => {
-  uni.showToast({
-    title: '菜单功能开发中',
-    icon: 'none'
-  });
-};
-
-const handleSupport = () => {
-  uni.showToast({
-    title: '客服功能开发中',
-    icon: 'none'
-  });
-};
 
 // ===== 事件处理函数 =====
 const handleSceneTap = (scene) => {

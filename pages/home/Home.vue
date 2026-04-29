@@ -1,7 +1,11 @@
 <template>
   <view class="home-container">
     <!-- 顶部导航栏 - 滚动到一定距离后显示 -->
-    <PageHeader :visible="showHeader" title="粤叁荟" @menu-click="handleMenu" @support-click="handleSupport" />
+    <PageHeader
+      :visible="showHeader"
+      title="粤叁荟"
+      :menu-icon-url="headerMenuIconUrl"
+    />
 
     <!-- 标题区域 -->
     <HomeTitle />
@@ -37,26 +41,13 @@ import SelectionSection3 from '@/components/home/SelectionSection/SelectionSecti
 // 控制 Header 显示/隐藏
 const showHeader = ref(false);
 const headerShowThreshold = 100;
+const headerMenuIconUrl = '/static/logo/首页 (1).png';
 
 // 使用 uni-app 的 onPageScroll 生命周期
 onPageScroll((e) => {
   const scrollTop = e.scrollTop;
   showHeader.value = scrollTop > headerShowThreshold;
 });
-
-const handleMenu = () => {
-  uni.showToast({
-    title: '菜单功能开发中',
-    icon: 'none'
-  });
-};
-
-const handleSupport = () => {
-  uni.showToast({
-    title: '客服功能开发中',
-    icon: 'none'
-  });
-};
 </script>
 
 <style scoped>

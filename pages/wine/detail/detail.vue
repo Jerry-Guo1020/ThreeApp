@@ -12,7 +12,15 @@
 
     <Banner />
     <Info />
-    <Comment />
+    <Comment
+      :overall-score="reviewStats.overallScore"
+      :comment-count="reviewStats.commentCount"
+      :score-bars="reviewStats.scoreBars"
+      :comments="sortedReviews"
+      :sort-type="sortType"
+      @write-review="handleWriteReview"
+      @view-all="handleViewAllReviews"
+    />
 
     <view class="bottom-safe"></view>
 
@@ -37,21 +45,62 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import { onShow } from '@dcloudio/uni-app';
 import Banner from '@/components/wine/details/Banner.vue';
 import Info from '@/components/wine/details/Info.vue';
 import Comment from '@/components/wine/details/Comment.vue';
+import { loadWineReviews, getWineReviewStats } from '@/components/wine/detail/rating/reviewStore.js';
 
 const isFavorite = ref(false);
 const statusBarHeight = ref(0);
+const reviews = ref([]);
+const sortType = ref('latest');
+
+const reviewStats = computed(() => getWineReviewStats(reviews.value));
+const sortedReviews = computed(() => {
+  const list = [...reviews.value];
+
+  if (sortType.value === 'score') {
+    return list.sort((a, b) => {
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      return new Date(b.time).getTime() - new Date(a.time).getTime();
+    });
+  }
+
+  return list.sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime());
+});
+
+const syncReviews = () => {
+  reviews.value = loadWineReviews();
+};
 
 onMounted(() => {
   const systemInfo = uni.getSystemInfoSync();
   statusBarHeight.value = systemInfo.statusBarHeight || 0;
+  syncReviews();
+});
+
+onShow(() => {
+  syncReviews();
 });
 
 const handleBack = () => {
   uni.navigateBack();
+};
+
+const handleWriteReview = () => {
+  uni.navigateTo({
+    url: '/pages/wine/detail/rating/rating'
+  });
+};
+
+const handleViewAllReviews = () => {
+  uni.navigateTo({
+    url: `/pages/wine/detail/rating/rating?mode=list&sort=${sortType.value}`
+  });
 };
 
 const handleShare = () => {

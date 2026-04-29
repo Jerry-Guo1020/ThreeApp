@@ -34,3 +34,5 @@ Thumbs.db
 # 临时文件
 *.tmp
 .cache/
+
+BACKEND_DATABASE_LOGIN_PLAN.md

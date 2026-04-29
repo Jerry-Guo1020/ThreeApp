@@ -6,18 +6,21 @@
   >
     <view class="header-content">
       <view class="header-left">
-        <text class="header-icon" @click="handleMenu">&#xe5d2;</text>
+        <image
+          v-if="menuIconUrl"
+          class="header-icon-image"
+          :src="menuIconUrl"
+          mode="aspectFit"
+        />
+        <view v-else class="header-icon-placeholder"></view>
         <text class="header-title">{{ title }}</text>
-      </view>
-      <view class="header-right">
-        <text class="header-icon" @click="handleSupport">&#xe947;</text>
       </view>
     </view>
   </view>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, defineProps, defineEmits } from 'vue';
+import { ref, computed, onMounted, defineProps } from 'vue';
 
 const props = defineProps({
   visible: {
@@ -27,10 +30,12 @@ const props = defineProps({
   title: {
     type: String,
     default: '粤叁荟'
+  },
+  menuIconUrl: {
+    type: String,
+    default: ''
   }
 });
-
-const emit = defineEmits(['menu-click', 'support-click']);
 
 const statusBarHeight = ref(0);
 const navBarHeight = ref(44);
@@ -59,14 +64,6 @@ const headerStyle = computed(() => ({
   height: navBarHeight.value + 'px',
   paddingRight: menuButtonWidth.value + 'px'
 }));
-
-const handleMenu = () => {
-  emit('menu-click');
-};
-
-const handleSupport = () => {
-  emit('support-click');
-};
 </script>
 
 <style scoped>
@@ -107,24 +104,11 @@ const handleSupport = () => {
   gap: 10rpx;
 }
 
-.header-icon {
-  font-size: 40rpx;
-  color: #002046;
-  cursor: pointer;
-  font-family: 'Material Icons Outlined', sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-}
-
-.header-icon:active {
-  opacity: 0.7;
+.header-icon-image,
+.header-icon-placeholder {
+  width: 40rpx;
+  height: 40rpx;
+  flex-shrink: 0;
 }
 
 .header-title {
@@ -133,17 +117,5 @@ const handleSupport = () => {
   color: #002046;
   letter-spacing: 2px;
   font-family: 'Manrope', sans-serif;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-@font-face {
-  font-family: 'Material Icons Outlined';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v140/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format('woff2');
 }
 </style>

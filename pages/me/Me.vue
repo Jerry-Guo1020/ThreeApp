@@ -1,7 +1,11 @@
 <template>
   <view class="me-container">
     <!-- 顶部导航栏 - 滚动到一定距离后显示 -->
-    <PageHeader :visible="showHeader" title="个人中心" @menu-click="handleMenu" @support-click="handleSupport" />
+    <PageHeader
+      :visible="showHeader"
+      title="个人中心"
+      :menu-icon-url="headerMenuIconUrl"
+    />
 
     <!-- 用户信息区域 -->
     <UserProfile />
@@ -33,6 +37,7 @@ import AccountActions from '@/components/me/AccountActions/AccountActions.vue';
 // 控制 Header 显示/隐藏
 const showHeader = ref(false);
 const headerShowThreshold = 100;
+const headerMenuIconUrl = '/static/logo/个人中心 (1).png';
 
 // 使用 uni-app 的 onPageScroll 生命周期
 onPageScroll((e) => {

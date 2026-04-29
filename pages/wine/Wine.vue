@@ -1,7 +1,11 @@
 <template>
   <view class="wine-page">
     <!-- 顶部导航栏 - 滚动到一定距离后显示 -->
-    <PageHeader :visible="showHeader" title="酒水精选" @menu-click="handleMenu" @support-click="handleSupport" />
+    <PageHeader
+      :visible="showHeader"
+      title="酒水精选"
+      :menu-icon-url="headerMenuIconUrl"
+    />
 
     <!-- 顶部标题 -->
     <WineTitle />
@@ -40,26 +44,13 @@ import WineContact from '@/components/wine/WineContact/WineContact.vue';
 // 控制 Header 显示/隐藏
 const showHeader = ref(false);
 const headerShowThreshold = 100;
+const headerMenuIconUrl = '/static/home/NavGrid/酒水.png';
 
 // 使用 uni-app 的 onPageScroll 生命周期
 onPageScroll((e) => {
   const scrollTop = e.scrollTop;
   showHeader.value = scrollTop > headerShowThreshold;
 });
-
-const handleMenu = () => {
-  uni.showToast({
-    title: '菜单功能开发中',
-    icon: 'none'
-  });
-};
-
-const handleSupport = () => {
-  uni.showToast({
-    title: '客服功能开发中',
-    icon: 'none'
-  });
-};
 </script>
 
 <style lang="scss" scoped>
